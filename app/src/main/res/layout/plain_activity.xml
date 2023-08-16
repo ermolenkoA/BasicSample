@@ -57,6 +57,7 @@
 
         <ImageView
             android:id="@+id/imageView"
+            app:popularityIcon="@{viewmodel.popularity}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -72,6 +73,7 @@
 
         <TextView
             android:id="@+id/likes"
+            android:text="@{Integer.toString(viewmodel.likes)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -131,6 +133,10 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
+            app:hideIfZero="@{viewmodel.likes}"
+            app:progressTint="@{viewmodel.popularity}"
+            app:progressScaled="@{viewmodel.likes}"
+            android:max="@{100}"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
