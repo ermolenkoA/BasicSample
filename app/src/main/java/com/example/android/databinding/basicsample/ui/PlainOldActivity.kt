@@ -46,18 +46,7 @@ class PlainOldActivity : AppCompatActivity() {
         val binding : PlainActivityBinding =
             DataBindingUtil.setContentView(this, R.layout.plain_activity)
 
-        binding.name = "Magnus"
-        binding.lastName = "Carlsen"
-
-        updateLikes()
-    }
-
-    /**
-     * This method is triggered by the `android:onclick` attribute in the layout. It puts business
-     * logic in the activity, which is not ideal. We should do something about that.
-     */
-    fun onLike(view: View) {
-        viewModel.onLike()
+        binding.viewmodel = viewModel
         updateLikes()
     }
 
